@@ -143,7 +143,12 @@ h1 {
 
   </style>
 </head>
-<body><div class="popup" id="popupText">Ini cewek aku yang cantik mode gemoy 💖</div>  <div class="grid-decoration g1"></div>
+<body><div id="loginScreen" style="position:fixed;inset:0;background:#111;display:flex;align-items:center;justify-content:center;z-index:9999;flex-direction:column;color:white;">
+  <h2 style="margin-bottom:20px;font-size:30px;text-align:center;">MASUKKAN NAMA CEWEK AL HURUF BESAR SEMUA💖</h2>
+  <input id="nameInput" type="text" placeholder="CONTOH: RIRI" style="padding:15px;border:none;border-radius:15px;width:280px;font-size:18px;text-align:center;outline:none;">
+  <button onclick="checkName()" style="margin-top:20px;padding:12px 25px;border:none;border-radius:15px;font-size:18px;background:white;color:black;font-weight:bold;cursor:pointer;">Masuk</button>
+  <p id="errorText" style="margin-top:15px;color:#ff8a8a;"></p>
+</div><div class="popup" id="popupText">Ini cewek aku yang cantik mode gemoy 💖</div>  <div class="grid-decoration g1"></div>
   <div class="grid-decoration g2"></div>
   <div class="grid-decoration g3"></div>  <h1>THIS PICTURE MY RIRI</h1>  <div class="bg-photo"></div>  <div class="container"><div class="card">
   <div class="frame" onclick="showPopup('Ini cewek ku gemoy banget 😆💖')">
@@ -152,7 +157,7 @@ h1 {
   <div class="caption">mode gemoy 😆</div>
 </div>
 
-<div class="card small">
+  </div><div class="card small">
   <div class="frame" onclick="showPopup('Ini cewek ku kalau sama aku lucu banget 🥰')">
     <img src="IMG-20260525-WA0008.jpg" alt="Mode Sama Cowok">
   </div>
@@ -174,6 +179,16 @@ h1 {
 </div>
 
   </div><script>
+  function checkName() {
+    const name = document.getElementById('nameInput').value.trim().toUpperCase();
+
+    if(name === 'PUTRI TRI KHOTIJAH' || name === 'RIRI' || name === 'PUTRI') {
+      document.getElementById('loginScreen').style.display = 'none';
+    } else {
+      document.getElementById('errorText').innerText = 'HURUF HARUS BESAR 😅';
+    }
+  }
+
   function showPopup(text = 'Ini cewek ku cantik banget 😍💖') {
     const popup = document.getElementById('popupText');
     popup.innerText = text;
