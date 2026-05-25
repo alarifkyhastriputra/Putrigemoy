@@ -30,11 +30,20 @@
 }
 
 body {
+  background: url('IMG-20260525-WA0008.jpg') center/cover no-repeat fixed;
+  backdrop-filter: blur(3px);
   background: #e9e9e9;
   overflow-x: hidden;
   min-height: 100vh;
   padding: 30px;
   position: relative;
+}
+
+.bg-photo {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.75);
+  z-index: -1;
 }
 
 .container {
@@ -136,42 +145,47 @@ h1 {
 </head>
 <body><div class="popup" id="popupText">Ini cewek aku yang cantik mode gemoy 💖</div>  <div class="grid-decoration g1"></div>
   <div class="grid-decoration g2"></div>
-  <div class="grid-decoration g3"></div>  <h1>THIS PICTURE MY RIRI</h1>  <div class="container"><div class="card">
-  <div class="frame" onclick="showPopup()">
+  <div class="grid-decoration g3"></div>  <h1>THIS PICTURE MY RIRI</h1>  <div class="bg-photo"></div>  <div class="container"><div class="card">
+  <div class="frame" onclick="showPopup('Ini cewek ku gemoy banget 😆💖')">
     <img src="IMG-20260525-WA0008.jpg" alt="Gemoy Picture">
   </div>
-  <div class="caption">GEMOY PICTURE</div>
+  <div class="caption">mode gemoy 😆</div>
 </div>
 
 <div class="card small">
-  <div class="frame" onclick="showPopup()">
+  <div class="frame" onclick="showPopup('Ini cewek ku kalau sama aku lucu banget 🥰')">
     <img src="IMG-20260525-WA0008.jpg" alt="Mode Sama Cowok">
   </div>
-  <div class="caption">mode sama cowok nya</div>
+  <div class="caption">mode sama cowok nya 🥰</div>
 </div>
 
 <div class="card small">
-  <div class="frame" onclick="showPopup()">
+  <div class="frame" onclick="showPopup('Ini cewek ku suka pamer kecantikan 😎✨')">
     <img src="IMG-20260525-WA0008.jpg" alt="Mode Pamaer">
   </div>
-  <div class="caption">mode pamaer</div>
+  <div class="caption">mode pamer cantik ✨</div>
 </div>
 
 <div class="card">
-  <div class="frame" onclick="showPopup()">
+  <div class="frame" onclick="showPopup('Ini cewek ku cantik banget 😍💖')">
     <img src="IMG-20260525-WA0008.jpg" alt="Mode Cantik">
   </div>
-  <div class="caption">Mode Cantik Banget</div>
+  <div class="caption">mode cantik banget 😍</div>
 </div>
 
   </div><script>
-  function showPopup() {
+  function showPopup(text = 'Ini cewek ku cantik banget 😍💖') {
     const popup = document.getElementById('popupText');
+    popup.innerText = text;
     popup.classList.add('show');
 
     setTimeout(() => {
       popup.classList.remove('show');
     }, 2000);
   }
-</script></body>
+</script>  <div style="margin-top:50px;text-align:center;background:rgba(255,255,255,0.7);padding:25px;border-radius:20px;max-width:800px;margin-left:auto;margin-right:auto;font-size:20px;font-weight:bold;color:#222;line-height:1.8;">
+    Maaf ya kalau aku sering bikin kamu kesel, marah, atau sedih.<br>
+    Aku cuma mau kamu tahu kalau aku sayang banget sama kamu 💖<br>
+    Terima kasih udah tetap ada sampai sekarang.
+  </div></body>
 </html>
